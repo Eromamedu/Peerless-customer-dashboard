@@ -27,7 +27,7 @@ import type {
 import { listCustomers } from "../services/customerService";
 
 import { StatusBadge } from "../components/ui/StatusBadge";
-import { CustomerTableSkeleton } from "../components/ui/CustomerTableSkeleton";
+// import { CustomerTableSkeleton } from "../components/ui/CustomerTableSkeleton";
 
 export default function CustomerDashboard() {
   const navigate = useNavigate();
