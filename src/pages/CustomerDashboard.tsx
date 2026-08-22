@@ -267,7 +267,8 @@ export default function CustomerDashboard() {
             HEADER
         ====================================================== */}
 
-        <header className="mb-7 flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+        {/* <header className="mb-7 flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between"> */}
+        <header className="mb-7 flex flex-col gap-5 sm:gap-6 lg:flex-row lg:items-start lg:justify-between">
 
           <div>
             <h1 className="text-2xl font-bold tracking-tight text-[#0f2747] sm:text-3xl lg:text-[36px]">
@@ -297,17 +298,19 @@ export default function CustomerDashboard() {
             STATISTICS
         ====================================================== */}
 
-        <section className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        {/* <section className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"> */}
+        <section className="mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 xl:grid-cols-4">
 
           {/* TOTAL */}
 
-          <div className="flex min-w-0 items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-
+          {/* <div className="flex min-w-0 items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"> */}
+<div className="flex min-w-0 w-full items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600">
               <Users size={22} />
             </div>
 
-            <div className="min-w-0">
+            {/* <div className="min-w-0"> */}
+            <div className="min-w-0 flex-1">
               <p className="text-sm font-medium text-slate-500">
                 Total Customers
               </p>
@@ -320,13 +323,15 @@ export default function CustomerDashboard() {
 
           {/* ACTIVE */}
 
-          <div className="flex min-w-0 items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          {/* <div className="flex min-w-0 items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"> */}
+          <div className="flex min-w-0 w-full items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
 
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
               <Building2 size={22} />
             </div>
 
-            <div className="min-w-0">
+            {/* <div className="min-w-0"> */}
+            <div className="min-w-0 flex-1">
               <p className="text-sm font-medium text-slate-500">
                 Active Customers
               </p>
@@ -339,13 +344,15 @@ export default function CustomerDashboard() {
 
           {/* PENDING */}
 
-          <div className="flex min-w-0 items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          {/* <div className="flex min-w-0 items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"> */}
+          <div className="flex min-w-0 w-full items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
 
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600">
               <Users size={22} />
             </div>
 
-            <div className="min-w-0">
+            {/* <div className="min-w-0"> */}
+            <div className="min-w-0 flex-1">
               <p className="text-sm font-medium text-slate-500">
                 Pending
               </p>
@@ -358,13 +365,16 @@ export default function CustomerDashboard() {
 
           {/* INACTIVE */}
 
-          <div className="flex min-w-0 items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          {/* <div className="flex min-w-0 items-center gap-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"> */}
+          <div className="flex min-w-0 w-full items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm sm:p-5">
+
 
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-slate-100 text-slate-600">
               <Building2 size={22} />
             </div>
 
-            <div className="min-w-0">
+            {/* <div className="min-w-0"> */}
+            <div className="min-w-0 flex-1">
               <p className="text-sm font-medium text-slate-500">
                 Inactive
               </p>
@@ -403,8 +413,8 @@ export default function CustomerDashboard() {
               FILTERS
           ==================================================== */}
 
-          <div className="grid grid-cols-1 gap-3 border-b border-slate-200 bg-white p-4 sm:p-5 lg:grid-cols-[minmax(240px,1fr)_180px_180px]">
-
+          {/* <div className="grid grid-cols-1 gap-3 border-b border-slate-200 bg-white p-4 sm:p-5 lg:grid-cols-[minmax(240px,1fr)_180px_180px]"> */}
+      <div className="grid grid-cols-1 gap-3 border-b border-slate-200 bg-white p-4 sm:grid-cols-2 sm:p-5 lg:grid-cols-[minmax(240px,1fr)_180px_180px]">
             {/* SEARCH */}
 
             <div className="relative w-full">
@@ -545,7 +555,8 @@ export default function CustomerDashboard() {
 
             <div className="w-full overflow-x-auto">
 
-              <table className="w-full min-w-[1050px] border-collapse">
+              {/* <table className="w-full min-w-[1050px] border-collapse"> */}
+              <table className="w-full min-w-[1050px] border-collapse text-left">
 
                 <thead>
                   <tr className="border-b border-slate-200 bg-slate-50">
@@ -670,19 +681,23 @@ export default function CustomerDashboard() {
 
                         {/* TYPE */}
 
-                        <td className="px-5 py-4 text-sm text-slate-600">
+                        {/* <td className="px-5 py-4 text-sm text-slate-600"> */}
+                        <td className="whitespace-nowrap px-5 py-4 align-middle text-sm text-slate-600">
                           {customer.type}
                         </td>
 
                         {/* INDUSTRY */}
 
-                        <td className="px-5 py-4 text-sm text-slate-600">
+                        {/* <td className="px-5 py-4 text-sm text-slate-600"> */}
+                        <td className="whitespace-nowrap px-5 py-4 align-middle text-sm text-slate-600">
                           {customer.industry}
                         </td>
 
                         {/* STATUS */}
 
-                        <td className="px-5 py-4">
+                        {/* <td className="px-5 py-4"> */}
+                        {/* <td className="whitespace-nowrap px-5 py-4 align-middle"> */}
+                     <td className="whitespace-nowrap px-1 py-4 align-middle text-sm text-slate-600">
                           <StatusBadge
                             status={
                               customer.status
@@ -692,7 +707,8 @@ export default function CustomerDashboard() {
 
                         {/* CREATED */}
 
-                        <td className="px-5 py-4 text-sm text-slate-600">
+                        {/* <td className="px-5 py-4 text-sm text-slate-600"> */}
+                        <td className="whitespace-nowrap px-5 py-4 align-middle text-sm text-slate-600">
                           {new Date(
                             customer.createdAt
                           ).toLocaleDateString(
