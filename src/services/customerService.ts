@@ -12,6 +12,7 @@ let failureMode = false;
 const wait = (ms: number) =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
+
 /*
  * =========================================================
  * LIST CUSTOMERS
@@ -27,6 +28,7 @@ export async function listCustomers(): Promise<Customer[]> {
 
   return [...customers];
 }
+
 
 /*
  * =========================================================
@@ -48,27 +50,39 @@ export async function createCustomer(
   const customer: Customer = {
     id: `cus-${Date.now()}`,
 
-    businessName: values.businessName.trim(),
+    businessName:
+      values.businessName.trim(),
 
-    type: values.type as Customer["type"],
+    type:
+      values.type as Customer["type"],
 
-    industry: values.industry as Customer["industry"],
+    industry:
+      values.industry as Customer["industry"],
 
-    contactPerson: values.contactPerson.trim(),
+    contactPerson:
+      values.contactPerson.trim(),
 
-    phone: values.phone.trim(),
+    phone:
+      values.phone.trim(),
 
-    email: values.email.trim().toLowerCase(),
+    email:
+      values.email.trim().toLowerCase(),
 
-    status: values.status as Customer["status"],
+    status:
+      values.status as Customer["status"],
 
-    createdAt: new Date().toISOString(),
+    createdAt:
+      new Date().toISOString(),
   };
 
-  customers = [customer, ...customers];
+  customers = [
+    customer,
+    ...customers,
+  ];
 
   return customer;
 }
+
 
 /*
  * =========================================================
@@ -79,7 +93,7 @@ export async function createCustomer(
 export async function deleteCustomer(
   customerId: string
 ): Promise<void> {
-  await wait(450);
+  await wait(500);
 
   if (failureMode) {
     throw new Error(
@@ -87,9 +101,11 @@ export async function deleteCustomer(
     );
   }
 
-  const customerExists = customers.some(
-    (customer) => customer.id === customerId
-  );
+  const customerExists =
+    customers.some(
+      (customer) =>
+        customer.id === customerId
+    );
 
   if (!customerExists) {
     throw new Error(
@@ -97,10 +113,13 @@ export async function deleteCustomer(
     );
   }
 
-  customers = customers.filter(
-    (customer) => customer.id !== customerId
-  );
+  customers =
+    customers.filter(
+      (customer) =>
+        customer.id !== customerId
+    );
 }
+
 
 /*
  * =========================================================
@@ -114,6 +133,7 @@ export function __setFailureMode(
   failureMode = value;
 }
 
+
 /*
  * =========================================================
  * RESET CUSTOMERS
@@ -121,12 +141,18 @@ export function __setFailureMode(
  */
 
 export function __resetCustomers() {
-  customers = [...initialCustomers];
+  customers = [
+    ...initialCustomers,
+  ];
 
   failureMode = false;
 }
 
+
+
+
 // import { initialCustomers } from "../data/customers";
+
 // import type {
 //   Customer,
 //   CustomerFormValues,
@@ -139,6 +165,12 @@ export function __resetCustomers() {
 // const wait = (ms: number) =>
 //   new Promise((resolve) => setTimeout(resolve, ms));
 
+// /*
+//  * =========================================================
+//  * LIST CUSTOMERS
+//  * =========================================================
+//  */
+
 // export async function listCustomers(): Promise<Customer[]> {
 //   await wait(450);
 
@@ -148,6 +180,12 @@ export function __resetCustomers() {
 
 //   return [...customers];
 // }
+
+// /*
+//  * =========================================================
+//  * CREATE CUSTOMER
+//  * =========================================================
+//  */
 
 // export async function createCustomer(
 //   values: CustomerFormValues
@@ -162,13 +200,21 @@ export function __resetCustomers() {
 
 //   const customer: Customer = {
 //     id: `cus-${Date.now()}`,
+
 //     businessName: values.businessName.trim(),
+
 //     type: values.type as Customer["type"],
+
 //     industry: values.industry as Customer["industry"],
+
 //     contactPerson: values.contactPerson.trim(),
+
 //     phone: values.phone.trim(),
+
 //     email: values.email.trim().toLowerCase(),
+
 //     status: values.status as Customer["status"],
+
 //     createdAt: new Date().toISOString(),
 //   };
 
@@ -177,11 +223,118 @@ export function __resetCustomers() {
 //   return customer;
 // }
 
-// export function __setFailureMode(value: boolean) {
+// /*
+//  * =========================================================
+//  * DELETE CUSTOMER
+//  * =========================================================
+//  */
+
+// export async function deleteCustomer(
+//   customerId: string
+// ): Promise<void> {
+//   await wait(450);
+
+//   if (failureMode) {
+//     throw new Error(
+//       "Unable to delete customer. Please try again."
+//     );
+//   }
+
+//   const customerExists = customers.some(
+//     (customer) => customer.id === customerId
+//   );
+
+//   if (!customerExists) {
+//     throw new Error(
+//       "Customer could not be found."
+//     );
+//   }
+
+//   customers = customers.filter(
+//     (customer) => customer.id !== customerId
+//   );
+// }
+
+// /*
+//  * =========================================================
+//  * FAILURE MODE
+//  * =========================================================
+//  */
+
+// export function __setFailureMode(
+//   value: boolean
+// ) {
 //   failureMode = value;
 // }
 
+// /*
+//  * =========================================================
+//  * RESET CUSTOMERS
+//  * =========================================================
+//  */
+
 // export function __resetCustomers() {
 //   customers = [...initialCustomers];
+
 //   failureMode = false;
 // }
+
+// // import { initialCustomers } from "../data/customers";
+// // import type {
+// //   Customer,
+// //   CustomerFormValues,
+// // } from "../types/customer";
+
+// // let customers = [...initialCustomers];
+
+// // let failureMode = false;
+
+// // const wait = (ms: number) =>
+// //   new Promise((resolve) => setTimeout(resolve, ms));
+
+// // export async function listCustomers(): Promise<Customer[]> {
+// //   await wait(450);
+
+// //   if (failureMode) {
+// //     throw new Error("Unable to load customers.");
+// //   }
+
+// //   return [...customers];
+// // }
+
+// // export async function createCustomer(
+// //   values: CustomerFormValues
+// // ): Promise<Customer> {
+// //   await wait(650);
+
+// //   if (failureMode) {
+// //     throw new Error(
+// //       "Unable to register customer. Please try again."
+// //     );
+// //   }
+
+// //   const customer: Customer = {
+// //     id: `cus-${Date.now()}`,
+// //     businessName: values.businessName.trim(),
+// //     type: values.type as Customer["type"],
+// //     industry: values.industry as Customer["industry"],
+// //     contactPerson: values.contactPerson.trim(),
+// //     phone: values.phone.trim(),
+// //     email: values.email.trim().toLowerCase(),
+// //     status: values.status as Customer["status"],
+// //     createdAt: new Date().toISOString(),
+// //   };
+
+// //   customers = [customer, ...customers];
+
+// //   return customer;
+// // }
+
+// // export function __setFailureMode(value: boolean) {
+// //   failureMode = value;
+// // }
+
+// // export function __resetCustomers() {
+// //   customers = [...initialCustomers];
+// //   failureMode = false;
+// // }
